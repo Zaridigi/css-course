@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(141, 141, 248);
+    /* Значек > указывает применение стиля только к 1=му дочернему элементу  */
+}div#container > ul {
+    border: 1px solid black;
+}
+/* Селектор по атрибуту [] */
+[title] {
+    color: rgb(159, 88, 140);
+}
+/* В данном случае специфичность повышает приоритет селлектора */
+div.text[title] {
+    color: rgb(51, 237, 254);
+}
+/* Селекторы можно указывать через запятую для придания одинаковых свойств, (div, ul), также они могут быть составными / Разные варианты / Атрибуты можно придумывать самим data- */
+a[href="img"] {
+    color: red;
+}
+a[href*="img"] {
+    color: red;
+}
+a[href^="http"] {
+    color: rgb(205, 235, 53);
+}
+a[href$="logo"] {
+    color: rgb(113, 120, 79);
+}
+a[href$=".jpg"], 
+a[href$=".png"], 
+a[href$=".gif"], 
+a[href$=".jpeg"] {
+    color: rgb(113, 120, 79);
+}
+/* a[data-filetype="image"] {
+    color: bisque;
+} */
+input:checked + span {
+    color: red;
+}
