@@ -1,7 +1,8 @@
 body {
     background-color: rgb(141, 141, 248);
+}
     /* Значек > указывает применение стиля только к 1=му дочернему элементу  */
-}div#container > ul {
+div#container > ul {
     border: 1px solid black;
 }
 /* Селектор по атрибуту [] */
@@ -34,6 +35,142 @@ a[href$=".jpeg"] {
 /* a[data-filetype="image"] {
     color: bisque;
 } */
-input:checked + span {
+/* Выделяет цветом текст отмеченный галочкой. но к радиокнопкам это не применяется */
+/* input:checked + span {
+    color: red;
+} */
+input[type="checkbox"]:checked + span {
     color: red;
 }
+/* Селектор отрицания позволяет выбрать элементы кроме определенного */
+li:not(.text1) {
+    color: rgb(33, 1, 216);
+    list-style: square;
+}
+/* Селекторы отдельных элементов, первый, последний, четные, нечетные */
+/* Выбор по порядковому номеру элемента в списке nth-child, обращение ко всем нечетным элементам odd, и к четным even */
+/* li:nth-child(5) {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+} */
+/* li:nth-child(odd) {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+} */
+/* li:nth-child(even) {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+} */
+/* Расчет идет с конца */
+li:nth-last-child(3) {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+}
+/* Первый элемент */
+li:first-child {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+}
+Последний элемент
+li:Last-child {
+    color: rgb(117, 2, 224);
+    font-weight: bold;
+}
+/* И много других возможностей - first-of-type, only-of-type, only-child... */
+/* Картинка на фон css. Без текста не устанавливается у меня и высота, ширина не меняются!!!? Чтобы картинка не повторялась с увеличением текста no-repeat, и другие разные свойства Ctrl+пробел. 2.42 */
+.img {
+    background-image: url(../img/image1.png);
+    width: 700;
+    background-repeat: no-repeat;
+}
+/* Границы border на css. Ctrl+пробел - для поиска значений. MDN - документация css */
+
+
+/* div p {
+    background-color: hsla(271, 76%, 53%, 0.5);
+    color: aqua;
+    border: 2px solid aqua;
+    border-radius: 5px;
+} */
+
+div p:nth-child(1) {
+    border: dashed aqua 2px;
+    border-radius: 0;
+    width: 100;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+div p:nth-child(2) {
+    border: dashed greenyellow;
+    border-radius: 70%;
+    width: 500px;
+    height: 150px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Для того чтобы текст расположить внутри фигуры. Почему не выходит овал !!!???  */
+div p:nth-child(3) {
+    background-color: rgba(234, 152, 221, 0.684);
+    color: blueviolet;
+    border: dotted #fdcaca 3px;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: inherit;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+/* Triangle generator. Генератор треугольников - есть разные сайты CSS Generators. Можно вставить картинку треугольника, но лучше создать его в css, так как картинка имеет вес и будет загружаться, а css отрисовывается браузером без дополнительных нагрузок */
+div p:nth-child(4) {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 100px 150px 100px;
+border-color: transparent transparent rgba(255, 234, 0, 0.715) transparent;
+display: flex;
+justify-content: center;
+align-items: center;
+letter-spacing: 10px;
+}
+/* Градиентный фон, скругления фигур также есть в генераторе */
+div p:nth-child(5) {
+    width: 150px;
+    height: 150px;
+    background: rgb(133, 250, 94);
+    background: linear-gradient(165deg, rgb(215, 83, 83) 30%, #84e949 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+/* Размеры элементов через инструмент разработчика. Пиксели на разных экранах разные */
+div p:nth-child(6) {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(53, 103, 242);
+    border: 3px solid blue;
+}
+/* Шрифт, размер и толщина */
+/* {
+font-family: sant-serif;
+font-family: 'Times New Roman', Times, serif;
+font-size: 18px; - размер;
+font-weight: bold; - жирный шрифт;
+font-weight: 700; - жирный шрифт;
+font-style: italic; - курсивное начертание;
+line-height: 150%; или line-height: 1.5; - межстрочный интервал 1.5 - универсальный;
+} */
+/* Межбуквенный интервал, выравнивание, трансформация, декорация, маркер списка */
+/* letter-spacing: 10px; межбуквенный интервал
+text-align: center; выравнивание текста по центру
+/ justufy / left / right
+text-decoration: overline; - подчеркивание
+text-transform: uppercase; все символы заглавные
+text-transform: capitalize; каждое слово с заглавной буквы
+list-style: square; изменение вида маркировки */
+Отступы margin
