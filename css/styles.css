@@ -124,7 +124,9 @@ div p:nth-child(3) {
     text-align: center;
     text-decoration: overline;
     text-transform: capitalize;
+    padding: 20px;
 }
+
 /* Triangle generator. Генератор треугольников - есть разные сайты CSS Generators. Можно вставить картинку треугольника, но лучше создать его в css, так как картинка имеет вес и будет загружаться, а css отрисовывается браузером без дополнительных нагрузок */
 div p:nth-child(4) {
 width: 0;
@@ -173,4 +175,132 @@ text-decoration: overline; - подчеркивание
 text-transform: uppercase; все символы заглавные
 text-transform: capitalize; каждое слово с заглавной буквы
 list-style: square; изменение вида маркировки */
-Отступы margin
+/* Отступы margin, margin: 40px 40px 40px 40px; - в таком виде по часовой стрелке
+margin-top: ; отступ сверху
+    margin-bottom: ; снизу
+    margin-left: ;
+    margin-right: ;
+    margin: 0 auto; - выравнивание по центру относительно своего родителя
+ */
+.box1 {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #fdcaca;
+    margin: 20px;
+}
+.box2 {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #f66666;
+    margin: 20px 30px 40px 50px;
+}
+.box3 {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #fb9393;
+    margin: 0 auto;
+}
+.box4{
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #b2fc94;
+    margin: 50px auto;
+}
+/* Поля padding(англ.прокладка. поля внутри элемента) и изменение размера элемента.
+Также может иметь от одного до 4 значений как и margin. Padding, border увеличиваеют размер элемента по умолчанию */
+.box5 {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #f9d47f;
+    padding: 20px 40px 10px 30px;
+    border: 5px solid #f89b22;
+}
+/* Блочная модель box-sizing border-box - помогает создавать границу без изменения размера элементов w h */
+.box6 {
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    background: #f9d47f;
+    padding: 20px 40px 10px 30px;
+    border: 5px solid #f89b22;
+    margin: auto;
+}
+.box7 {
+    box-sizing: content-box;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    background: #f9d47f;
+    padding: 20px 40px 10px 30px;
+    border: 5px solid #f89b22;
+    margin: 10px;
+}
+/* Но эти методы не удобны и есть конструкция которая позволяет установить border-box для всех элементов сразу. Она устанавливается в начале страницы и применяется ко всем тэгам - самый оптимальный вариант
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+} */
+/* Псевдоэлементы before и after 
+pointer - указатель - рука, move .. и много других вариантов курсора. Можно устанавливать символы или пометку до или посте элемента */
+button {
+    cursor: pointer;
+}
+div.new1::after {
+    content: ' new 1';
+    color: #f9d47f;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: gray;
+}
+div.new2::before {
+    content: ' new 2';
+    color: #f9d47f;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: rgb(0, 0, 0);
+}
+div.new3::before {
+    content: '\00A9';
+    color: #f9d47f;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: rgb(0, 0, 0);
+}
+/* Таблица символов для CSS - https://www.schoolsw3.com/cssref/css_entities.php - можно взять код символа и добавить его в ::content с помощью \  */
+
+/* CSS Flexbox / Урок по CSS Flexbox И. Усманова
+Flex контейнер и flex wrap. Для свойства display по умолчанию используется block, и другие часто используемые значения flax или grid. Благодаря wrap элементы не вмещающиеся в строку перескакивают на новую */
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parent > div {
+    width: 150px;
+    background-color: rgb(97, 5, 255);
+    margin: 5px;
+    padding: 10px;
+}
+div.elem3 {
+    display: block;
+    width: 150px;
+    background-color: rgb(97, 5, 255);
+    margin: 5px;
+    padding: 10px;
+}
