@@ -284,23 +284,49 @@ div.new3::before {
 /* Таблица символов для CSS - https://www.schoolsw3.com/cssref/css_entities.php - можно взять код символа и добавить его в ::content с помощью \  */
 
 /* CSS Flexbox / Урок по CSS Flexbox И. Усманова
-Flex контейнер и flex wrap. Для свойства display по умолчанию используется block, и другие часто используемые значения flax или grid. Благодаря wrap элементы не вмещающиеся в строку перескакивают на новую */
+Flex контейнер и flex wrap. Для свойства display по умолчанию используется block, и другие часто используемые значения flax или grid. Благодаря wrap элементы не вмещающиеся в строку перескакивают на новую 
+Отступы gap и margin. lex-direction - позволяет установить направление по горизонтали, по вертикали. 3.45. Лучше использовать gap вместо margin  
+row-gap отступ по горизонтали между элементами
+column-gap отступ по вертикали
+Выравнивание с помощью justify content
+order: -1; - перемещение элемента в начало списка без использования html
+order: -1; - в конец
+Вертикальное выравнивание align items и self
+align-items: применяется ко всем элементам, его указывать именно для родителя
+align-self: для отдельного элемента*/
 
 .parent {
     display: flex;
     flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 20px;
+    height: 250px;
+    align-items: center;
 }
 
 .parent > div {
     width: 150px;
     background-color: rgb(97, 5, 255);
-    margin: 5px;
+    /* margin: 5px; */
     padding: 10px;
+    height: 50px;
 }
 div.elem3 {
     display: block;
     width: 150px;
-    background-color: rgb(97, 5, 255);
+    background-color: rgb(5, 151, 255);
     margin: 5px;
     padding: 10px;
 }
+.parent > div:nth-child(2) {
+    order: 1;
+}
+.parent > div:nth-child(3) {
+    order: -1;
+}
+.parent > div:nth-child(3) {
+    align-self: center;
+}
+/* Основы CSS Grid, Теория
+Справочник по css grid - morphismail.github.io - от Усманова. flexbox проще, и часто устанавливается внутри Gridа */
