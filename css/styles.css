@@ -329,4 +329,61 @@ div.elem3 {
     align-self: center;
 }
 /* Основы CSS Grid, Теория
-Справочник по css grid - morphismail.github.io - от Усманова. flexbox проще, и часто устанавливается внутри Gridа */
+Справочник по css grid - morphismail.github.io - от Усманова. flexbox проще, и часто устанавливается внутри Gridа 
+Отличие grid от flexbox
+flexbox - направлен по одной оси 
+Grid - ориентируется на две оси
+Поддержку браузерами проверять на сайте can i use, и другие возможности , тэги и свойства
+Grid - столбцы, строки, расстояния между ними 
+gap - 1 параметр овечает за расстояние между рядами, второй между столбцами
+column-gap только расстояние между столбцами 
+row-gap расстояние между рядами
+grid-template-rows: 100px 50px; отвечает за ряды. Первый ряд высотой 100, а второй ряд высотой 50 
+fr - фракция- пропорции относительно ширины экрана, относительная ед. изм. она гибкая
+px - абсолютная единица изм.
+grid-template-columns если указать одно значение все будет друг под другом , сколько фракций указать, столько столбцов будет в строке*/
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 50px 50px;
+}
+.item {
+    background-color: #b2fc94;
+} */
+
+/* Строки на css grid */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px 1fr);
+    gap: 50px 50px;
+    grid-template-rows: 100px 50px;
+    grid-template-areas: "area2 . ." "area2 area3 area3";
+    margin: 50px 10px 20px 50px;
+}
+.item {
+    background-color: #b2fc94;
+}
+
+/* grid-rows и grid-columns 
+grid-row: 1 / 3; элемент занимает место 1 и 2 строки
+grid-row: 1 / 3; иначе */
+
+.item1 {
+    /* grid-row: 1 / 3; */
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.item6 {
+    grid-column: 3 / 5;
+}
+/* Области на css grid 
+grid-auto-flow: row - направление - по умолчанию слева на право, можно установить сверху вниз column
+area - область */
+.item1 {
+    grid-area: area2;
+}
+.item4 {
+    grid-area: area3;
+}
